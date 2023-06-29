@@ -95,3 +95,70 @@ html {
     font-family: var(--ffPoppins);
     font-size: 10px;
 }
+
+/* Global */
+
+.hidden {
+    visibility: hidden;
+
+    /* Needed for a smooth transition when the element appear or disappear */
+    opacity: 0;
+}
+
+.disableScrolling {
+    overflow: hidden;
+}
+
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    z-index: 10;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--bgLavenderBlush);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition1);
+}
+
+#iconPreloader {
+    animation: iconBounce 500ms ease-in-out infinite alternate;
+}
+
+#shadowPreloader {
+    background-color: var(--bgBlackAlpha-20);
+    filter: blur(4px);
+
+    height: 10px;
+    width: 40px;
+
+    animation: bouncingShadow 500ms ease-in-out infinite alternate;
+}
+
+@keyframes iconBounce {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bouncingShadow {
+    0% {
+        width: 30px;
+    }
+
+    100% {
+        width: 40px;
+    }
+}
